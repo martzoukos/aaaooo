@@ -1,3 +1,8 @@
+// alphabet sounds:
+// https://freesound.org/search/?q=alphabet&f=grouping_pack:%224371_The%20Alphabet%22%20&s=%22score%20desc%22&g=1&advanced=&a_tag=&a_filename=&a_description=&a_packname=&a_soundid=&a_username=
+// https://freesound.org/people/dersuperanton/sounds/434730/
+// https://www.npmjs.com/package/react-sound
+
 class Letter extends React.Component {
 	 constructor(props) {
     super(props);
@@ -63,9 +68,6 @@ class Letter extends React.Component {
 		  			line-height: 80vh;
 		  			text-align: center;
 					}
-
-					.letter__character--animate {
-		  		}
 
 					#letter__input { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
 			  		position: absolute !important;
