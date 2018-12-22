@@ -1,0 +1,28 @@
+{
+  "name": "aaaooo",
+  "version": "1.0.0",
+  "description": "A child's game where you just see what you type on the screen, in big type.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martzoukos/aaaooo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martzoukos/aaaooo/issues"
+  },
+  "homepage": "https://github.com/martzoukos/aaaooo#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
