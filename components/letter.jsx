@@ -2,12 +2,11 @@ class Letter extends React.Component {
 	 constructor(props) {
     super(props);
     this.state = {
-    	letter: this.props.value
+    	letterValue: this.props.value
     };
   }
 
-  updateLetter = (event) => {
-  	console.log(event.keyCode);
+  updateLetterValue = (event) => {
   	if (
   		// https://keycode.info/
   		// This seemingly random list of keys representes alphanumeric and special characters. 
@@ -17,7 +16,7 @@ class Letter extends React.Component {
   	  || (event.keyCode >= 186 && event.keyCode <= 223))
   	{
 			this.setState({
-		  	letter: event.key
+		  	letterValue: event.key
 		  });	
   	}
 	}
@@ -25,9 +24,16 @@ class Letter extends React.Component {
 	render() {
 		return (
 			<div className="letter">
-				<div className="letter__character" onKeyDown={this.updateLetter} tabIndex="0">
-		  		{this.state.letter}
-		  	</div>
+				<label htmlFor="letter__input" className="letter__character" >
+		  		{this.state.letterValue}
+		  	</label>
+		  	<input 
+		  		autoFocus 
+		  		readOnly
+		  		id="letter__input" 
+		  		onKeyDown={this.updateLetterValue} 
+		  		value={this.state.letterValue}
+		  		/>
 		  	<style jsx>{`
 		  		.letter__character {
 		  			background-color: #edff8f;
@@ -42,6 +48,14 @@ class Letter extends React.Component {
 		  			line-height: 80vh;
 		  			text-align: center;
 		  		}
+
+					#letter__input { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+			  		position: absolute !important;
+				    height: 1px; width: 1px;
+				    overflow: hidden;
+				    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+				    clip: rect(1px, 1px, 1px, 1px);
+				  }
 		  	`}</style>
 		  </div>
 	  )

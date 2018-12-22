@@ -2,7 +2,7 @@ import Letter from '../components/letter';
 
 const Page = () => (
 	<div>
-  	<Letter value="A" />
+  	<Letter value="•" />
   </div>
 )
 
