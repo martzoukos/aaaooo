@@ -1,6 +1,7 @@
 class Letter extends React.Component {
 	 constructor(props) {
     super(props);
+    this.key = 0;
     this.state = {
     	letterValue: this.props.value
     };
@@ -22,9 +23,15 @@ class Letter extends React.Component {
 	}
 
 	render() {
+		// Rerender the component to refire the animation on each keystroke.
+		// I know, yuk.
+    ++this.key;
 		return (
 			<div className="letter">
-				<label htmlFor="letter__input" className="letter__character" >
+				<label 
+					htmlFor="letter__input"
+					className="letter__character"
+					key={this.key} >
 		  		{this.state.letterValue}
 		  	</label>
 		  	<input 
@@ -35,8 +42,16 @@ class Letter extends React.Component {
 		  		value={this.state.letterValue}
 		  		/>
 		  	<style jsx>{`
+		  		@keyframes reset {
+					  from {color: #fd1265;}
+					  to {color: #ff5994;}
+					}
+
 		  		.letter__character {
 		  			background-color: #edff8f;
+					  animation-name: reset;
+					  animation-duration: .5s;
+
 		  			color: #ff5994;
 		  			font-family: "Comic Sans MS", cursive, sans-serif;
 		  			position: absolute;
@@ -47,6 +62,9 @@ class Letter extends React.Component {
 		  			font-size: 80vh;
 		  			line-height: 80vh;
 		  			text-align: center;
+					}
+
+					.letter__character--animate {
 		  		}
 
 					#letter__input { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
