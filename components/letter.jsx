@@ -25,26 +25,40 @@ class Letter extends React.Component {
 	}
 
 	render() {
-		// Rerender the component to refire the animation on each keystroke.
+		// Rerender the Letter component to refire the animation on each keystroke.
 		// I know, yuk.
-    ++this.key;
+		++this.key;
 		return (
 			<div className="letter">
 				<label 
 					htmlFor="letter__input"
-					className="letter__character"
-					key={this.key} >
+					className="letter__character" 
+		  		key={this.key} >
 		  		{this.state.letterValue}
 		  	</label>
 		  	<input 
 		  		autoFocus 
 		  		readOnly
 		  		id="letter__input" 
+		  		className="visuallyhidden"
 		  		onKeyDown={this.updateLetterValue} 
 		  		value={this.state.letterValue}
 		  		/>
-		  	<audio src={this.state.soundFile} autoPlay/>
+		  	{this.props.audioIsAllowed ? (
+		  		<audio src={this.state.soundFile} autoPlay/>
+		  	) : (
+		  		false
+		  	)}
 		  	<style jsx>{`
+		  		.visuallyhidden {
+						/* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+			  		position: absolute !important;
+				    height: 1px; width: 1px;
+				    overflow: hidden;
+				    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+				    clip: rect(1px, 1px, 1px, 1px);
+		  		}
+
 		  		@keyframes reset {
 					  from {color: #fd1265;}
 					  to {color: #ff5994;}
@@ -55,8 +69,6 @@ class Letter extends React.Component {
 					  animation-name: reset;
 					  animation-duration: .5s;
 
-		  			color: #ff5994;
-		  			font-family: "Comic Sans MS", cursive, sans-serif;
 		  			position: absolute;
 		  			top: 0;
 		  			left: 0;
@@ -66,14 +78,6 @@ class Letter extends React.Component {
 		  			line-height: 80vh;
 		  			text-align: center;
 					}
-
-					#letter__input { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
-			  		position: absolute !important;
-				    height: 1px; width: 1px;
-				    overflow: hidden;
-				    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-				    clip: rect(1px, 1px, 1px, 1px);
-				  }
 		  	`}</style>
 		  </div>
 	  )
