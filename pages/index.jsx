@@ -12,7 +12,6 @@ class Page extends React.Component {
     this.state = {
     	audioState: true
     };
-    console.log(this.bgColor);
   }
 
   toggleAudio = (event) => {
