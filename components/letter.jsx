@@ -1,14 +1,10 @@
-// alphabet sounds:
-// https://freesound.org/search/?q=alphabet&f=grouping_pack:%224371_The%20Alphabet%22%20&s=%22score%20desc%22&g=1&advanced=&a_tag=&a_filename=&a_description=&a_packname=&a_soundid=&a_username=
-// https://freesound.org/people/dersuperanton/sounds/434730/
-// https://www.npmjs.com/package/react-sound
-
 class Letter extends React.Component {
 	 constructor(props) {
     super(props);
     this.key = 0;
     this.state = {
-    	letterValue: this.props.value
+    	letterValue: this.props.value,
+    	soundFile: `./static/alphabet/${this.props.value}.wav`
     };
   }
 
@@ -22,7 +18,8 @@ class Letter extends React.Component {
   	  || (event.keyCode >= 186 && event.keyCode <= 223))
   	{
 			this.setState({
-		  	letterValue: event.key
+		  	letterValue: event.key,
+		  	soundFile: `./static/alphabet/${event.key}.wav`
 		  });	
   	}
 	}
@@ -46,6 +43,7 @@ class Letter extends React.Component {
 		  		onKeyDown={this.updateLetterValue} 
 		  		value={this.state.letterValue}
 		  		/>
+		  	<audio src={this.state.soundFile} autoPlay/>
 		  	<style jsx>{`
 		  		@keyframes reset {
 					  from {color: #fd1265;}
