@@ -65,7 +65,6 @@ class Letter extends React.Component {
 					}
 
 		  		.letter__character {
-		  			background-color: #edff8f;
 					  animation-name: reset;
 					  animation-duration: .5s;
 

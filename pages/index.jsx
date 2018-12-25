@@ -1,14 +1,18 @@
+import {withRouter} from 'next/router'
 import Letter from '../components/letter';
 
 class Page extends React.Component {
 	constructor(props) {
     super(props);
-    this.bgColor = "#ff5994";
-    this.textColor = "#ff5994";
-    this.fontFamily = '"Comic Sans MS", cursive, sans-serif';
+    this.bgColor = props.router.query.bgColor || "#edff8f";
+    this.textColor = props.router.query.textColor || "#ff5994";
+    this.fontFamily = props.router.query.fontFamily || '"Comic Sans MS", cursive, sans-serif';
+    this.fontWeight = props.router.query.fontWeight || "400";
+    this.fontStyle = props.router.query.fontStyle || "normal";
     this.state = {
     	audioState: true
     };
+    console.log(this.bgColor);
   }
 
   toggleAudio = (event) => {
@@ -41,7 +45,10 @@ class Page extends React.Component {
 		  			left: 0;
 		  			right: 0;
 		  			bottom: 0;
+			  		background-color: ${this.bgColor};
 		  			font-family: ${this.fontFamily};
+		  			font-weight: ${this.fontWeight};
+		  			font-style: ${this.fontStyle};
 		  			color: ${this.textColor};
 			  	}
 
@@ -74,4 +81,4 @@ class Page extends React.Component {
 	}
 }
 
-export default Page
+export default withRouter(Page)
