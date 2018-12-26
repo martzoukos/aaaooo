@@ -59,8 +59,8 @@ class Letter extends React.Component {
 		  		}
 
 		  		@keyframes reset {
-					  from {color: #fd1265;}
-					  to {color: #ff5994;}
+					  from {filter: brightness(60%);}
+					  to {color: ${this.textColor};}
 					}
 
 		  		.letter__character {

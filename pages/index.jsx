@@ -41,7 +41,7 @@ class Page extends React.Component {
 			  	<label htmlFor="toggle-audio">Play audio</label>
 			  </div>
 			  <footer className="footer">
-			  	Created by <a href="https://twitter.com/martzoukos">@martzoukos</a>
+			  	<a href="https://github.com/martzoukos/aaaooo">Instructions</a>
 			  </footer>
 			  <style jsx>{`
 			  	.container {
@@ -64,8 +64,8 @@ class Page extends React.Component {
 			  	}
 			  	a:hover,
 			  	a:focus {
-			  		background-color: ${this.bgColor};
-			  		color: #edff8f;
+			  		background-color: ${this.textColor};
+			  		color: ${this.bgColor};
 			  	}
 
 			  	.footer {
