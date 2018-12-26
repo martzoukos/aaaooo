@@ -38,11 +38,11 @@ class Letter extends React.Component {
 		  	</label>
 		  	<input 
 		  		autoFocus 
-		  		readOnly
 		  		id="letter__input" 
-		  		className="visuallyhidden"
+		  		className="visuallyhidden letter__input"
 		  		onKeyDown={this.updateLetterValue} 
 		  		value={this.state.letterValue}
+		  		type="text"
 		  		/>
 		  	{this.props.audioIsAllowed ? (
 		  		<audio src={this.state.soundFile} autoPlay/>
@@ -76,6 +76,11 @@ class Letter extends React.Component {
 		  			font-size: 80vh;
 		  			line-height: 80vh;
 		  			text-align: center;
+					}
+
+					.letter__input {
+						/* Disable zoom in iOS when keyboard is shown */
+						font-size: 80vh;
 					}
 		  	`}</style>
 		  </div>

@@ -6,7 +6,7 @@ class Page extends React.Component {
     super(props);
     this.bgColor = props.router.query.bgColor || "#edff8f";
     this.textColor = props.router.query.textColor || "#ff5994";
-    this.fontFamily = props.router.query.fontFamily || '"Comic Sans MS", cursive, sans-serif';
+    this.fontFamily = props.router.query.fontFamily || '"Comic Sans MS", sans-serif';
     this.fontWeight = props.router.query.fontWeight || "400";
     this.fontStyle = props.router.query.fontStyle || "normal";
     this.state = {
@@ -24,7 +24,7 @@ class Page extends React.Component {
 		return (
 			<div className="container">
 		  	<Letter 
-		  		value="•"
+		  		value="A"
 		  		audioIsAllowed={this.state.audioState}/>
 		  	<div className="audio-control">
 					<input 
@@ -39,6 +39,7 @@ class Page extends React.Component {
 			  </footer>
 			  <style jsx>{`
 			  	.container {
+			  		overflow: hidden;
 		  			position: absolute;
 		  			top: 0;
 		  			left: 0;
