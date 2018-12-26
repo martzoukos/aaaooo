@@ -41,7 +41,6 @@ class Letter extends React.Component {
 		  		id="letter__input" 
 		  		className="visuallyhidden letter__input"
 		  		onKeyDown={this.updateLetterValue} 
-		  		value={this.state.letterValue}
 		  		type="text"
 		  		/>
 		  	{this.props.audioIsAllowed ? (

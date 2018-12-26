@@ -1,5 +1,6 @@
 import {withRouter} from 'next/router'
 import Letter from '../components/letter';
+import Head from 'next/head';
 
 class Page extends React.Component {
 	constructor(props) {
@@ -23,6 +24,11 @@ class Page extends React.Component {
 	render() {
 		return (
 			<div className="container">
+				<Head>
+		      <title>aaaooo.in - type something</title>
+					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131389191-1"></script>
+					<script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-131389191-1');` }} />
+		    </Head>
 		  	<Letter 
 		  		value="A"
 		  		audioIsAllowed={this.state.audioState}/>
