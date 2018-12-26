@@ -23,6 +23,7 @@
   "homepage": "https://github.com/martzoukos/aaaooo#readme",
   "dependencies": {
     "next": "^7.0.2",
+    "query-string": "^6.2.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   }
