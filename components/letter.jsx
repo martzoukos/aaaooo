@@ -4,7 +4,7 @@ class Letter extends React.Component {
     this.key = 0;
     this.state = {
     	letterValue: this.props.value,
-    	soundFile: `./static/alphabet/${this.props.value.toLowerCase()}.wav`
+    	soundFile: `./static/sounds/ektoras/${this.props.value.toLowerCase()}.mp3`
     };
   }
 
@@ -19,7 +19,7 @@ class Letter extends React.Component {
   	{
 			this.setState({
 		  	letterValue: event.key,
-		  	soundFile: `./static/alphabet/${event.key.toLowerCase()}.wav`
+		  	soundFile: `./static/sounds/ektoras/${event.key.toLowerCase()}.mp3`
 		  });	
   	}
 	}
