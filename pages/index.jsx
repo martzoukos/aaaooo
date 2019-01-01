@@ -55,6 +55,11 @@ class Page extends React.Component {
 			<div className="container">
 				<Head>
 		      <title>aaaooo.in - type something</title>
+		      <meta property="og:title" content="aaaooo.in - type something">
+					<meta property="og:description" content="A page where your toddler can play with your keyboard and type random letters.">
+					<meta property="og:image" content="https://aaaooo.in/static/app-screenshot.png">
+					<meta property="og:url" content="http://aaaooo.in">
+					<meta name="twitter:card" content="summary_large_image">
 					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131389191-1"></script>
 					<script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-131389191-1');` }} />
 		    </Head>
